@@ -2,6 +2,8 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const app = express();
 const cors = require('cors');
+const bodyParser = require("body-parser");
+const path = require("path");
 
 app.use(cors());
 app.use(express.json()); // Parse JSON request bodies
@@ -47,7 +49,13 @@ app.post('/send-email', (req, res) => {
   });
 });
 
+app.use(express.static(path.join(__dirname, "./reactapp")));
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "reactapp", "index.html"));
+});
+
 // Start the server
-app.listen(3001, () => {
-  console.log('Server started on port 3001');
+app.set('port', process.env.PORT || 3001);
+const server = app.listen(app.get('port'),async () => {
+console.log(`Express running → PORT ${server.address().port}`);
 });
