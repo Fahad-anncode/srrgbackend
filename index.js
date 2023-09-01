@@ -4,6 +4,7 @@ const app = express();
 const cors = require('cors');
 const bodyParser = require("body-parser");
 const path = require("path");
+require('dotenv').config();
 
 app.use(cors());
 app.use(express.json()); // Parse JSON request bodies
@@ -12,8 +13,8 @@ app.use(express.json()); // Parse JSON request bodies
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'fahadanncode@gmail.com',
-    pass: 'ptavtrxywlaqsunl'
+    user: process.env.EmailUser,
+    pass: process.env.EmailPassword
   }
   
 });
@@ -25,7 +26,7 @@ app.post('/send-email', (req, res) => {
 
   const mailOptions = {
     from: 'email',
-    to: 'salil@srrgtechnologies.com',
+    to: process.env.EmailTo,
     subject: 'About the company',
     text: `
       Name: ${name}
@@ -55,7 +56,7 @@ app.get("/*", (req, res) => {
 });
 
 // Start the server
-app.set('port', process.env.PORT || 3001);
+app.set('port', process.env.PORT || process.env.PORT);
 const server = app.listen(app.get('port'),async () => {
 console.log(`Express running → PORT ${server.address().port}`);
 });
