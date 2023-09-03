@@ -50,9 +50,9 @@ app.post('/send-email', (req, res) => {
   });
 });
 
-app.use(express.static(path.join(__dirname, "./reactapp")));
+app.use(express.static(path.join(__dirname, "./react-app")));
 app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "reactapp", "index.html"));
+  res.sendFile(path.join(__dirname, "react-app", "index.html"));
 });
 
 // Start the server
