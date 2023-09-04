@@ -1,0 +1,28 @@
+2023-09-04T12:53:21.072Z: Received a POST request to /send-email
+2023-09-04T12:53:21.073Z: {
+  "name": "fahad masood"
+}
+2023-09-04T12:55:30.422Z: Received a POST request to /send-email
+2023-09-04T12:55:30.423Z: {
+  "name": "fahad masood"
+}
+2023-09-04T12:56:48.422Z: Received a POST request to /send-email
+2023-09-04T12:56:48.488Z: {
+  "name": "fahad masood"
+}
+2023-09-04T12:57:19.073Z: Received a POST request to /send-email
+2023-09-04T12:57:19.073Z: {
+  "name": "fahad masood00000000000000"
+}
+2023-09-04T12:59:00.301Z: Received a POST request to /send-email
+2023-09-04T12:59:00.303Z: {
+  "name": "fahad masood00000000000000"
+}
+2023-09-04T13:09:26.503Z: Received a POST request to /send-email
+2023-09-04T13:09:27.340Z: {
+  "name": "fahad masoodvikesh"
+}
+2023-09-04T13:11:39.088Z: Received a POST request to /send-email
+2023-09-04T13:11:39.090Z: {
+  "name": "fahad masoodvikesh"
+}

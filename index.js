@@ -4,6 +4,8 @@ const app = express();
 const cors = require('cors');
 const bodyParser = require("body-parser");
 const path = require("path");
+const logger = require('./router/Loggoer'); // Import the logger module
+
 require('dotenv').config();
 
 app.use(cors());
@@ -23,7 +25,8 @@ const transporter = nodemailer.createTransport({
 app.post('/send-email', (req, res) => {
      console.log(req.body)
   const { name,lastname, email, phone, text } = req.body;
-
+  logger.log('Received a POST request to /send-email');
+  logger.log(JSON.stringify(req.body, null, 2));
   const mailOptions = {
     from: 'email',
     to: process.env.EmailTo,
